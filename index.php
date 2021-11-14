@@ -1,7 +1,3 @@
-<?php
-    include 'engine/db_connect.php';
-?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -13,28 +9,20 @@
 <body>
     <h1>Dados Cadastrados</h1>
 
+    <ul>
+        <li>1 - Consultar </li>
+        <li>2 - Inserir   </li>
+        <li>3 - Alterar   </li>
+        <li>4 - Excluir   </li>
+    </ul>
 
-    <article>
-        <?php
-            // $usuario = 'Julia';
+    <?php
+        switch($op != '5'){
             
-            $consulta = $pdo->prepare("SELECT * FROM  cliente");
+        }
 
-             // $consulta = $pdo->prepare("SELECT * FROM  cliente WHERE nome = '$usuario'");
-
-            $consulta->execute();
-            
-            $qtdRegistros = $consulta->rowCount();
-
-            foreach($consulta as $exibe){
-        ?>
-            <p>Nome: <?= $exibe['nome']; ?> </p>
-            <p>ID: <?= $exibe['id']; ?> </p>
-            <br>
-        <?php
-            }
-        ?>
-    </article>
+    ?>
+   
 
     <?php
         /*Concatenação de variáveis*/
@@ -43,7 +31,6 @@
         // echo 'Meu nome é ' .$nome .' e tenho ' .$idade .' anos '; 
 
         // $array_frutas = array('Laranja', 'Uva', 'Morango');
-       
    ?>
 
 </body>
